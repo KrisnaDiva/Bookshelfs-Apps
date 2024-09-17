@@ -1,21 +1,23 @@
-* {
+* { 
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body, input, button {
+body,
+input,
+button {
     font-family: 'Open Sans', sans-serif;
 }
 
-input, button {
+input,
+button {
     font-size: 16px;
 }
 
-.head_bar {
+header {
     padding: 12px;
     display: flex;
-    align-items: center;
     justify-content: center;
     background-color: coral;
     color: white;
@@ -26,147 +28,123 @@ main {
     width: 80%;
     margin: 0 auto;
     padding: 16px;
-
 }
 
-.input_section {
-    display: flex;
-    flex-direction: column;
+section {
     padding: 16px;
     border: 1px solid black;
     border-radius: 10px;
+    margin-bottom: 16px;
 }
 
-.input_section > h2 {
+section > h2 {
     text-align: center;
     color: coral;
+    margin-bottom: 16px;
 }
 
-.input_section > form > .input {
+form > div {
+    margin-bottom: 16px;
+}
+
+form > div > label {
+    color: coral;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form > div > input:not([type="checkbox"]) {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+
+form > button {
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 16px;
+}
+
+form > button:hover {
+    background-color: darkorange;
+}
+
+#incompleteBookshelfList,
+#completeBookshelfList {
+    padding: 16px;
+}
+
+[data-testid="bookItem"] {
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+[data-testid="bookItem"] > h3,
+[data-testid="bookItem"] > p {
     margin: 8px 0;
 }
 
-.input_section > form > button {
-    background-color: coral;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    display: block;
-    width: 100%;
+[data-testid="bookItem"] > div > button {
+    border: none;
+    border-radius: 4px;
     padding: 8px;
     cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.input_section > form > button > span {
-    font-weight: bold;
+[data-testid="bookItemIsCompleteButton"] {
+    background-color: darkgreen;
+    color: white;
 }
 
-.input_section > form > .input > input {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
+[data-testid="bookItemIsCompleteButton"]:hover {
+    background-color: green;
+    transform: scale(1.05);
 }
 
-
-.input_section > form > .input > label {
-    color: coral;
-    font-weight: bold;
+[data-testid="bookItemDeleteButton"] {
+    background-color: darkred;
+    color: white;
 }
 
-.input_section > form > .input_inline {
-    margin: 12px 0;
-    display: flex;
-    align-items: center;
+[data-testid="bookItemDeleteButton"]:hover {
+    background-color: red;
+    transform: scale(1.05);
 }
 
-.input_section > form > .input_inline > label {
+[data-testid="bookItemEditButton"] {
+    background-color: #f4d03f;
+    color: black;
+}
+
+[data-testid="bookItemEditButton"]:hover {
+    background-color: #f7e07b;
+    transform: scale(1.05);
+}
+
+#searchBook label {
     color: coral;
     font-weight: bold;
     margin-right: 10px;
 }
 
-.search_section {
-    margin: 16px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-
-.search_section > h2 {
-    color: coral;
-}
-
-.search_section > form {
-    padding: 16px;
+#searchBook input {
     width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr 0.5fr;
-    grid-gap: 10px;
-}
-
-.search_section > form > label {
-    display: flex;
-    align-items: center;
-}
-
-.search_section > form > input {
-    padding: 5px;
+    padding: 8px;
     border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
 }
-
-.search_section > form > button {
-    background-color: coral;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.book_shelf {
-    margin: 16px 0 0 0;
-    border: 1px solid black;
-    padding: 16px;
-    border-radius: 10px;
-}
-
-.book_shelf > h2 {
-    color: coral;
-}
-
-.book_shelf > .book_list {
-    padding: 16px;
-}
-
-.book_shelf > .book_list > .book_item {
-    padding: 8px 16px 16px 16px;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 10px 0;
-}
-
-.book_shelf > .book_list > .book_item > h3, p {
-    margin: 8px 0;
-}
-
-.book_shelf > .book_list > .book_item > .action > button {
-    border: 0;
-    padding: 5px;
-    margin: 0 5px 0 0;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.book_shelf > .book_list > .book_item > .action > .green {
-    background-color: darkgreen;
-    color: white;
-}
-
-.book_shelf > .book_list > .book_item > .action > .red {
-    background-color: darkred;
-    color: white;
-}
-
